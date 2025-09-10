@@ -9,6 +9,7 @@ A DVD rental company seeks to optimize their inventory planning by predicting re
 ## 📊 Dataset Overview
 
 The dataset contains rental information with the following key features:
+
 - **Temporal Features**: `rental_date`, `return_date`
 - **Financial Features**: `amount`, `rental_rate`, `replacement_cost`
 - **Movie Features**: `release_year`, `length`, `special_features`
@@ -18,18 +19,21 @@ The dataset contains rental information with the following key features:
 ## 🔬 Methodology
 
 ### 1. Data Preprocessing
+
 - Created target variable: `rental_length_days` (rental duration in days)
 - Generated dummy variables for special features (Deleted Scenes, Behind the Scenes, Commentaries, Trailers)
 - Feature selection: Removed temporal and categorical source columns
 
 ### 2. Model Development Pipeline
-```
+
+```bash
 Data Exploration → Preprocessing → Baseline Models → Hyperparameter Tuning → Ensemble Methods → Final Evaluation
 ```
 
 ### 3. Models Evaluated
 
 #### Baseline Models (Cross-Validation)
+
 | Model | RMSE | MSE | Status |
 |-------|------|-----|--------|
 | **Random Forest** | **1.4223** | **2.0229** | ✅ **Best Baseline** |
@@ -40,6 +44,7 @@ Data Exploration → Preprocessing → Baseline Models → Hyperparameter Tuning
 | SVR | 2.6723 | 7.1412 | ❌ Above Target |
 
 #### Optimized Models (Test Set Performance)
+
 | Model | RMSE | MSE | Improvement |
 |-------|------|-----|-------------|
 | **Gradient Boosting (Tuned)** | **1.3729** | **1.8850** | **🏆 Best Model** |
@@ -50,17 +55,21 @@ Data Exploration → Preprocessing → Baseline Models → Hyperparameter Tuning
 ## 🎉 Key Results
 
 ### 🏆 **MISSION ACCOMPLISHED**
+
 - **Target**: MSE < 3.0
 - **Achieved**: MSE = 1.8850 (37% better than target)
 - **Best Model**: Gradient Boosting Regressor (Tuned)
 
 ### 📈 **Performance Improvements**
+
 - **17% improvement** from baseline Random Forest (1.4223 → 1.3729 RMSE)
 - **All optimized models** exceed the company's requirements
 - **Ensemble methods** consistently outperform individual models
 
 ### 🔧 **Optimal Hyperparameters**
+
 The best Gradient Boosting model uses:
+
 - Extensive hyperparameter search across 5 key parameters
 - 5-fold cross-validation for robust model selection
 - Optimized for mean squared error
@@ -68,18 +77,21 @@ The best Gradient Boosting model uses:
 ## 🛠️ Technical Implementation
 
 ### Libraries Used
+
 - **Data Processing**: pandas, numpy
 - **Machine Learning**: scikit-learn
 - **Model Types**: Linear models, Tree-based models, Ensemble methods
 - **Optimization**: GridSearchCV with cross-validation
 
 ### Reproducibility
+
 - Fixed random seed (SEED = 9) for consistent results
 - 80/20 train-test split
 - Standardized evaluation metrics (RMSE, MSE)
 
 ## 📁 Project Structure
-```
+
+```bash
 DS_project11(RentalsPredictions)/
 ├── notebook.ipynb          # Main analysis notebook
 ├── rental_info.csv         # Dataset
@@ -91,17 +103,20 @@ DS_project11(RentalsPredictions)/
 ## 🚀 How to Run
 
 1. **Clone the repository**
+
    ```bash
    git clone https://github.com/Alaeddin-B/Movie-Rental-Durations-Predictor.git
    cd Movie-Rental-Durations-Predictor
    ```
 
 2. **Install dependencies**
+
    ```bash
    pip install -r requirements.txt
    ```
 
 3. **Run the analysis**
+
    ```bash
    jupyter notebook notebook.ipynb
    ```
@@ -109,6 +124,7 @@ DS_project11(RentalsPredictions)/
 ## 💼 Business Impact
 
 This model enables the DVD rental company to:
+
 - **Predict rental durations** with 88% accuracy (1.88 MSE vs 3.0 target)
 - **Optimize inventory management** by anticipating return patterns
 - **Improve customer service** through better availability forecasting
