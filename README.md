@@ -125,7 +125,7 @@ DS_project11(RentalsPredictions)/
 
 This model enables the DVD rental company to:
 
-- **Predict rental durations** with 88% accuracy (1.88 MSE vs 3.0 target)
+- **Predict rental durations** Final test MSE = 1.8850 (RMSE ≈ 1.373).
 - **Optimize inventory management** by anticipating return patterns
 - **Improve customer service** through better availability forecasting
 - **Reduce operational costs** via data-driven planning
